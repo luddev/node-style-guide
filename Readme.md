@@ -309,13 +309,14 @@ if (a == '') {
 ## Use multi-line ternary operator
 
 The ternary operator should not be used on a single line. Split it up into multiple lines instead.
+Use multi-line ternary operator when the condition and values are big.
 
 *Right:*
 
 ```js
-var foo = (a === b)
-  ? 1
-  : 2;
+var foo = (a === b) && (d == 3)
+  ? "Very Long Test" + "Some More Test"
+  : "This could be really long ? ";
 ```
 
 *Wrong:*
@@ -430,6 +431,7 @@ function isPercentage(val) {
 
 Feel free to give your closures a name. It shows that you care about them, and
 will produce better stack traces, heap and cpu profiles.
+Conditional : avoid only when you cannot do anything about it.
 
 *Right:*
 
@@ -450,6 +452,7 @@ req.on('end', function() {
 ## No nested closures
 
 Use closures, but don't nest them. Otherwise your code will become a mess.
+Conditional : Use only if you cannot avoid nesting.
 
 *Right:*
 
